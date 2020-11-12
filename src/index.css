@@ -1,0 +1,13 @@
+* {
+  margin: 0 !important;
+}
+body {
+  margin: 0 !important;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+code {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}

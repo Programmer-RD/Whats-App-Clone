@@ -1,0 +1,9 @@
+.banner {
+  background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png") !important;
+  flex: 1 !important;
+  background-repeat: repeat !important;
+  background-position: center !important;
+  padding: 25px !important;
+  overflow: scroll !important;
+  text-align: center !important;
+}

@@ -1,0 +1,54 @@
+.sidebar {
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 0.35 !important;
+}
+.sidebar__header {
+  display: flex !important;
+  justify-content: space-between !important;
+  padding: 20px !important;
+  border-right: 1px solid lightgray !important;
+}
+.sidebar__headerRight {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  min-width: 10vw !important;
+}
+.sidebar__headerRight > .MuiSvgIcon-root {
+  margin-right: 2vw !important;
+  font-size: 25px !important;
+}
+.sidebar__search {
+  display: flex !important;
+  align-items: center !important;
+  background-color: #f6f6f6 !important;
+  height: 39px !important;
+  padding: 10px !important;
+  width: 100% !important;
+  background-color: rgb(238, 238, 238) !important;
+  padding: 10px !important;
+}
+.sidebar_search_Container {
+  display: flex !important;
+  align-items: center !important;
+  background-color: white !important;
+  width: 95% !important;
+  height: 35px !important;
+  border-radius: 20px !important;
+}
+.sidebar_search_Container > input {
+  border: none !important;
+  margin-left: 10px !important;
+  width: 100% !important;
+}
+.sidebar__search_Container > .MuiSvgIcon-root {
+  background-color: rgb(238, 238, 238) !important;
+  color: gray !important;
+  padding: 10px !important;
+}
+.sidebar__chats {
+  flex: 1 !important;
+  overflow: scroll !important;
+  background-color: white !important;
+}
