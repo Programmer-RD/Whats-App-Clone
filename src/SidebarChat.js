@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { db } from "./firebase";
 import "./SidebarChat.css";
-function SidebarChat({ addNewChat, id, name }) {
+function SidebarChat({ addNewChat, id, name, image }) {
   // State (Start)
   const [messages, setMessages] = useState("");
   // State (End)
@@ -25,9 +25,14 @@ function SidebarChat({ addNewChat, id, name }) {
   // Functions (Start)
   const createChat = () => {
     const roomName = prompt("Please enter the name of the group.");
-    if (roomName) {
+    const roomImage = prompt(
+      "Please enter a valid url with the profile picture of the group."
+    );
+
+    if (roomName && roomImage) {
       db.collection("rooms").add({
         name: roomName,
+        image: roomImage,
       });
     }
   };
@@ -35,13 +40,16 @@ function SidebarChat({ addNewChat, id, name }) {
   return !addNewChat ? (
     <Link to={`/rooms/${id}`}>
       <div className="sidebarChat">
-        <Avatar
-          src={`https://avatars.dicebear.com/api/human/${id.toString()}.svg`}
-        />
+        <Avatar src={image} />
         <div className="sidebarChat__info">
-          <h2>{name}</h2>
+          <h2>
+            {" "}
+            <b> {name} </b>{" "}
+          </h2>
           <p>
-          {messages[0]?.name} : {messages[0]?.message}
+            <b>
+              {messages[0]?.name} : {messages[0]?.message}
+            </b>
           </p>
         </div>
         <br />

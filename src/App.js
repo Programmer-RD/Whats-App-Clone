@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Chat from "./Chat";
@@ -8,7 +7,6 @@ import Sidebar from "./Sidebar";
 import { useStateValue } from "./StateProvider";
 
 function App() {
-  //const [user, setUser] = useState(false);
   const [{ user }, dispatch] = useStateValue();
   return (
     <div className="app">
@@ -33,11 +31,11 @@ function App() {
       )}
       <div className="footer">
         {/* Footer (Start) */}
-        <h3>
+        <h2>
           <b>
             <i>Copyright © 2020 RanugaD</i>
           </b>
-        </h3>
+        </h2>
         {/* Footer (End) */}
       </div>
     </div>

@@ -8,7 +8,11 @@ function HomePageBanner() {
         alt=""
       />
       <div className="login__text">
-        <h1> Whats app web clone </h1>
+        <h1>
+          <b>
+            <i> Whatsapp web clone </i>
+          </b>
+        </h1>
       </div>
     </div>
   );

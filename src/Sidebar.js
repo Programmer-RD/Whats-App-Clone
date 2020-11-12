@@ -4,8 +4,7 @@ import { Avatar, IconButton } from "@material-ui/core";
 import {
   DonutLarge,
   MoreVert,
-  SearchOutlined,
-  Unsubscribe,
+  SearchOutlined
 } from "@material-ui/icons";
 import ChatIcon from "@material-ui/icons/Chat";
 import SidebarChat from "./SidebarChat";
@@ -53,7 +52,7 @@ function Sidebar() {
       <div className="sidebar__chats">
         <SidebarChat addNewChat />
         {rooms.map((room) => (
-          <SidebarChat key={room.id} id={room.id} name={room.data.name} />
+          <SidebarChat key={room.id} id={room.id} name={room.data.name} image={room.data.image} />
         ))}
       </div>
     </div>

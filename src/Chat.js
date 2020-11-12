@@ -19,6 +19,7 @@ function Chat() {
   const [roomName, setRoomName] = useState("");
   const [messages, setMessages] = useState([]);
   const [{ user }, dispatch] = useStateValue();
+  const [roomImage, setRoomImage] = useState("");
   // State (End)
   /* */
   // Effect (Start)
@@ -27,7 +28,11 @@ function Chat() {
       db.collection("rooms")
         .doc(roomId)
         .onSnapshot((snapshot) => setRoomName(snapshot.data().name));
-      db.collection("rooms")
+        db.collection("rooms")
+        .doc(roomId)
+        .onSnapshot((snapshot) => setRoomImage(snapshot.data().image));
+      
+        db.collection("rooms")
         .doc(roomId)
         .collection("messages")
         .orderBy("timestamp", "asc")
@@ -55,7 +60,7 @@ function Chat() {
     <div className="chat">
       <div className="chat__header">
         <Avatar
-          src={`https://avatars.dicebear.com/api/human/${roomId.toString()}.svg`}
+          src={roomImage}
         />
         <div className="chat__headerInfo">
           <h3>{roomName}</h3>
