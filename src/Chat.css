@@ -9,7 +9,7 @@
   background-repeat: repeat !important;
   background-position: center !important;
   padding: 25px !important;
-  overflow: scroll !important;
+  overflow: auto scroll !important;
 }
 .chat__header {
   padding: 20px !important;

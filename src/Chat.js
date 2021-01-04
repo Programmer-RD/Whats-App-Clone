@@ -28,16 +28,16 @@ function Chat() {
       db.collection("rooms")
         .doc(roomId)
         .onSnapshot((snapshot) => setRoomName(snapshot.data().name));
-        db.collection("rooms")
+      db.collection("rooms")
         .doc(roomId)
         .onSnapshot((snapshot) => setRoomImage(snapshot.data().image));
-      
-        db.collection("rooms")
+      db.collection("rooms")
         .doc(roomId)
         .collection("messages")
         .orderBy("timestamp", "asc")
         .onSnapshot((snapshot) =>
-          setMessages(snapshot.docs.map((doc) => doc.data()))
+          //setMessages()
+          console.log(snapshot.docs[0].data())//snapshot.docs.map((doc) => doc.data()))
         );
     }
   }, [roomId]);
@@ -59,11 +59,11 @@ function Chat() {
   return (
     <div className="chat">
       <div className="chat__header">
-        <Avatar
-          src={roomImage}
-        />
+        <Avatar src={roomImage} />
         <div className="chat__headerInfo">
-          <h3>{roomName}</h3>
+          <h2>
+            <b>{roomName}</b>
+          </h2>
           <p>
             last seen{" "}
             {new Date(
